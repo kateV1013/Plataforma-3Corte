@@ -28,11 +28,9 @@ Este proyecto implementa un **sistema de gestión de cursos académicos** desarr
 **Método A: Usando la Terminal (Recomendado)**
 
 ```bash
-# 1. Crear el proyecto
-dotnet new console -n CatalogoCursos
-cd CatalogoCursos
+# 1. clonar el repositorio
 
-# 2. Reemplazar el contenido de Program.cs con el código proporcionado
+# 2. abrir el proyecto de c sharp
 
 # 3. Ejecutar la aplicación
 dotnet run
