@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CodigC#")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+aa4f6ebbf3aeea4e5c9ff9009b4f0b1a1d8637d1")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ca8e63335988b3cdad9a5399057edb73e01fd6cc")]
 [assembly: System.Reflection.AssemblyProductAttribute("CodigC#")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CodigC#")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

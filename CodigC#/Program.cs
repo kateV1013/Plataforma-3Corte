@@ -96,7 +96,7 @@ namespace CatalogoCursos
         {
             Console.WriteLine("\n📋 === LISTADO COMPLETO DE CURSOS ===");
             Console.WriteLine();
-            
+
             foreach (var curso in cursos)
             {
                 Console.ForegroundColor = ConsoleColor.Green;
@@ -104,7 +104,7 @@ namespace CatalogoCursos
                 Console.ResetColor();
                 Console.WriteLine($" {curso}");
             }
-            
+
             Console.WriteLine();
             Console.WriteLine($"Total de cursos: {cursos.Count}");
         }
@@ -136,6 +136,65 @@ namespace CatalogoCursos
                 Console.WriteLine("\n❌ No se encontraron cursos que coincidan con la búsqueda.");
             }
         }
+        // Generado con ayuda de Copilot: Implementación de paginación simple
+        static void PaginarCursos()
+        {
+            int elementosPorPagina = 3;
+            int totalPaginas = (int)Math.Ceiling((double)cursos.Count / elementosPorPagina);
+            int paginaActual = 1;
+            bool navegando = true;
 
+            while (navegando)
+            {
+                Console.Clear();
+                Console.WriteLine("📄 === CURSOS PAGINADOS ===");
+                Console.WriteLine($"Página {paginaActual} de {totalPaginas}\n");
+            } // Calcular los elementos de la página actual
+                var cursosEnPagina = cursos
+                    .Skip((paginaActual - 1) * elementosPorPagina)
+                    .Take(elementosPorPagina)
+                    .ToList();
+
+                foreach (var curso in cursosEnPagina)
+                {
+                    Console.ForegroundColor = ConsoleColor.Magenta;
+                    Console.Write("▸");
+                    Console.ResetColor();
+                    Console.WriteLine($" {curso}");
+                }
+
+                Console.WriteLine();
+                Console.WriteLine("[A] Anterior | [S] Siguiente | [Q] Volver al menú");
+                Console.Write("Opción: ");
+
+                string opcion = Console.ReadLine()?.ToUpper() ?? "";
+
+                switch (opcion)
+                {
+                    case "A":
+                        if (paginaActual > 1)
+                            paginaActual--;
+                        else
+                            Console.WriteLine("⚠️ Ya estás en la primera página.");
+                        break;
+                    case "S":
+                        if (paginaActual < totalPaginas)
+                            paginaActual++;
+                        else
+                            Console.WriteLine("⚠️ Ya estás en la última página.");
+                        break;
+                    case "Q":
+                        navegando = false;
+                        break;
+                }
+
+                if (navegando && opcion != "A" && opcion != "S" && opcion != "Q")
+                {
+                    Console.WriteLine("❌ Opción no válida.");
+                    System.Threading.Thread.Sleep(1000);
+                }
+            }
     }
 }
+
+

@@ -1,0 +1,15 @@
+C:\Users\inmo\Desktop\Crtodo\Proyecto de plataformas\Plataforma-3Corte\CodigC#\bin\Debug\net9.0\CodigC#.exe
+C:\Users\inmo\Desktop\Crtodo\Proyecto de plataformas\Plataforma-3Corte\CodigC#\bin\Debug\net9.0\CodigC#.deps.json
+C:\Users\inmo\Desktop\Crtodo\Proyecto de plataformas\Plataforma-3Corte\CodigC#\bin\Debug\net9.0\CodigC#.runtimeconfig.json
+C:\Users\inmo\Desktop\Crtodo\Proyecto de plataformas\Plataforma-3Corte\CodigC#\bin\Debug\net9.0\CodigC#.dll
+C:\Users\inmo\Desktop\Crtodo\Proyecto de plataformas\Plataforma-3Corte\CodigC#\bin\Debug\net9.0\CodigC#.pdb
+C:\Users\inmo\Desktop\Crtodo\Proyecto de plataformas\Plataforma-3Corte\CodigC#\obj\Debug\net9.0\CodigC#.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\inmo\Desktop\Crtodo\Proyecto de plataformas\Plataforma-3Corte\CodigC#\obj\Debug\net9.0\CodigC#.AssemblyInfoInputs.cache
+C:\Users\inmo\Desktop\Crtodo\Proyecto de plataformas\Plataforma-3Corte\CodigC#\obj\Debug\net9.0\CodigC#.AssemblyInfo.cs
+C:\Users\inmo\Desktop\Crtodo\Proyecto de plataformas\Plataforma-3Corte\CodigC#\obj\Debug\net9.0\CodigC#.csproj.CoreCompileInputs.cache
+C:\Users\inmo\Desktop\Crtodo\Proyecto de plataformas\Plataforma-3Corte\CodigC#\obj\Debug\net9.0\CodigC#.sourcelink.json
+C:\Users\inmo\Desktop\Crtodo\Proyecto de plataformas\Plataforma-3Corte\CodigC#\obj\Debug\net9.0\CodigC#.dll
+C:\Users\inmo\Desktop\Crtodo\Proyecto de plataformas\Plataforma-3Corte\CodigC#\obj\Debug\net9.0\refint\CodigC#.dll
+C:\Users\inmo\Desktop\Crtodo\Proyecto de plataformas\Plataforma-3Corte\CodigC#\obj\Debug\net9.0\CodigC#.pdb
+C:\Users\inmo\Desktop\Crtodo\Proyecto de plataformas\Plataforma-3Corte\CodigC#\obj\Debug\net9.0\CodigC#.genruntimeconfig.cache
+C:\Users\inmo\Desktop\Crtodo\Proyecto de plataformas\Plataforma-3Corte\CodigC#\obj\Debug\net9.0\ref\CodigC#.dll
