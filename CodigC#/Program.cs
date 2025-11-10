@@ -109,6 +109,33 @@ namespace CatalogoCursos
             Console.WriteLine($"Total de cursos: {cursos.Count}");
         }
         // Generado con ayuda de Copilot: Lógica de búsqueda con LINQ
-        
+        static void BuscarCursos()
+        {
+            Console.WriteLine("\n🔍 === BÚSQUEDA DE CURSOS ===");
+            Console.Write("Ingrese el término de búsqueda: ");
+            string termino = Console.ReadLine() ?? "";
+
+            // Filtro case-insensitive usando LINQ
+            var resultados = cursos
+                .Where(c => c.Nombre.Contains(termino, StringComparison.OrdinalIgnoreCase))
+                .ToList();
+
+            if (resultados.Count > 0)
+            {
+                Console.WriteLine($"\n✅ Se encontraron {resultados.Count} resultado(s):\n");
+                foreach (var curso in resultados)
+                {
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    Console.Write("🔹");
+                    Console.ResetColor();
+                    Console.WriteLine($" {curso}");
+                }
+            }
+            else
+            {
+                Console.WriteLine("\n❌ No se encontraron cursos que coincidan con la búsqueda.");
+            }
+        }
+
     }
 }
