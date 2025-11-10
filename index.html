@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Cursos - C#</title>
+    <style>
+        :root {
+            --color-primary: #0099A8;
+            --color-background: #fcfcf9;
+            --color-text: #1f2121;
+            --color-surface: #ffffff;
+            --color-border: rgba(94, 82, 64, 0.2);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--color-background);
+            color: var(--color-text);
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        header {
+            background: var(--color-primary);
+            color: white;
+            padding: 20px 30px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-size: 28px;
+            margin-bottom: 5px;
+        }
+
+        header p {
+            opacity: 0.9;
+            font-size: 14px;
+        }
+
+        .code-section {
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .code-section h2 {
+            color: var(--color-primary);
+            margin-bottom: 15px;
+            font-size: 20px;
+            border-bottom: 2px solid var(--color-primary);
+            padding-bottom: 10px;
+        }
+
+        pre {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 13px;
+            line-height: 1.5;
+        }
+
+        .comment {
+            color: #75715e;
+        }
+
+        .keyword {
+            color: #66d9ef;
+        }
+
+        .string {
+            color: #e6db74;
+        }
+
+        .class-name {
+            color: #a6e22e;
+        }
+
+        .method {
+            color: #a6e22e;
+        }
+
+        .number {
+            color: #ae81ff;
+        }
+
+        .instructions {
+            background: #e8f4f5;
+            border-left: 4px solid var(--color-primary);
+            padding: 15px 20px;
+            margin-bottom: 25px;
+            border-radius: 5px;
+        }
+
+        .instructions h3 {
+            color: var(--color-primary);
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+
+        .instructions ol {
+            margin-left: 20px;
+        }
+
+        .instructions li {
+            margin-bottom: 8px;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .feature-card {
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .feature-card h4 {
+            color: var(--color-primary);
+            margin-bottom: 8px;
+            font-size: 16px;
+        }
+
+        .feature-card p {
+            font-size: 13px;
+            color: #626c71;
+        }
+
+        .note {
+            background: #fff4e6;
+            border-left: 4px solid #f39c12;
+            padding: 12px 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .copilot-badge {
+            display: inline-block;
+            background: #5b2c6f;
+            color: white;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            color: #626c71;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📚 Catálogo de Cursos - C# Console</h1>
+            <p>Sistema de gestión de cursos con búsqueda y paginación | Plataformas de Colaboración Digital</p>
+        </header>
+
+        <div class="instructions">
+            <h3>📋 Instrucciones para Ejecutar</h3>
+            <ol>
+                <li>Crea un nuevo proyecto de consola: <code>dotnet new console -n CatalogoCursos</code></li>
+                <li>Reemplaza el contenido de <strong>Program.cs</strong> con el código de abajo</li>
+                <li>Ejecuta el proyecto: <code>dotnet run</code></li>
+                <li>Sigue las instrucciones en la consola para buscar y paginar cursos</li>
+            </ol>
+        </div>
+
+        <div class="features">
+            <div class="feature-card">
+                <h4>✅ Listado de Cursos</h4>
+                <p>Muestra 5 cursos de ejemplo con ID, nombre y área</p>
+            </div>
+            <div class="feature-card">
+                <h4>🔍 Búsqueda</h4>
+                <p>Filtra cursos por nombre (case-insensitive)</p>
+            </div>
+            <div class="feature-card">
+                <h4>📄 Paginación</h4>
+                <p>Navega por páginas de 3 cursos cada una</p>
+            </div>
+            <div class="feature-card">
+                <h4>🎯 Menú Interactivo</h4>
+                <p>Opciones claras para el usuario</p>
+            </div>
+        </div>
+
+        <div class="code-section">
+            <span class="copilot-badge">🤖 GitHub Copilot</span>
+            <h2>Program.cs - Código Completo</h2>
+            <pre><span class="comment">// Catálogo de Cursos - Aplicación de Consola C#</span>
+<span class="comment">// Generado con ayuda de GitHub Copilot: Estructura base, clase Curso y menú principal</span>
+<span class="comment">// Caso Práctico: Plataformas de Colaboración Digital</span>
+
+<span class="keyword">using</span> System;
+<span class="keyword">using</span> System.Collections.Generic;
+<span class="keyword">using</span> System.Linq;
+
+<span class="keyword">namespace</span> CatalogoCursos
+{
+    <span class="comment">// Generado con ayuda de Copilot: Estructura de la clase Curso</span>
+    <span class="keyword">class</span> <span class="class-name">Curso</span>
+    {
+        <span class="keyword">public int</span> Id { <span class="keyword">get</span>; <span class="keyword">set</span>; }
+        <span class="keyword">public string</span> Nombre { <span class="keyword">get</span>; <span class="keyword">set</span>; }
+        <span class="keyword">public string</span> Area { <span class="keyword">get</span>; <span class="keyword">set</span>; }
+        <span class="keyword">public int</span> Creditos { <span class="keyword">get</span>; <span class="keyword">set</span>; }
+
+        <span class="keyword">public override string</span> <span class="method">ToString</span>()
+        {
+            <span class="keyword">return</span> <span class="string">$"[{Id}] {Nombre} - Área: {Area} ({Creditos} créditos)"</span>;
+        }
+    }
+
+    <span class="keyword">class</span> <span class="class-name">Program</span>
+    {
+        <span class="comment">// Lista estática de cursos de ejemplo (3-5 registros según requisitos)</span>
+        <span class="keyword">static</span> List&lt;Curso&gt; cursos = <span class="keyword">new</span> List&lt;Curso&gt;
+        {
+            <span class="keyword">new</span> Curso { Id = <span class="number">1</span>, Nombre = <span class="string">"Algoritmos I"</span>, Area = <span class="string">"Computación"</span>, Creditos = <span class="number">4</span> },
+            <span class="keyword">new</span> Curso { Id = <span class="number">2</span>, Nombre = <span class="string">"Introducción a la Programación"</span>, Area = <span class="string">"Computación"</span>, Creditos = <span class="number">3</span> },
+            <span class="keyword">new</span> Curso { Id = <span class="number">3</span>, Nombre = <span class="string">"Matemática Discreta"</span>, Area = <span class="string">"Matemáticas"</span>, Creditos = <span class="number">4</span> },
+            <span class="keyword">new</span> Curso { Id = <span class="number">4</span>, Nombre = <span class="string">"Bases de Datos"</span>, Area = <span class="string">"Computación"</span>, Creditos = <span class="number">3</span> },
+            <span class="keyword">new</span> Curso { Id = <span class="number">5</span>, Nombre = <span class="string">"Estructuras de Datos"</span>, Area = <span class="string">"Computación"</span>, Creditos = <span class="number">4</span> }
+        };
+
+        <span class="keyword">static void</span> <span class="method">Main</span>(<span class="keyword">string</span>[] args)
+        {
+            Console.OutputEncoding = System.Text.Encoding.UTF8;
+            <span class="keyword">bool</span> continuar = <span class="keyword">true</span>;
+
+            <span class="comment">// Generado con ayuda de Copilot: Estructura del menú principal</span>
+            <span class="keyword">while</span> (continuar)
+            {
+                <span class="method">MostrarMenu</span>();
+                <span class="keyword">string</span> opcion = Console.ReadLine();
+
+                <span class="keyword">switch</span> (opcion)
+                {
+                    <span class="keyword">case</span> <span class="string">"1"</span>:
+                        <span class="method">ListarTodosCursos</span>();
+                        <span class="keyword">break</span>;
+                    <span class="keyword">case</span> <span class="string">"2"</span>:
+                        <span class="method">BuscarCursos</span>();
+                        <span class="keyword">break</span>;
+                    <span class="keyword">case</span> <span class="string">"3"</span>:
+                        <span class="method">PaginarCursos</span>();
+                        <span class="keyword">break</span>;
+                    <span class="keyword">case</span> <span class="string">"4"</span>:
+                        continuar = <span class="keyword">false</span>;
+                        Console.WriteLine(<span class="string">"\n¡Hasta luego!"</span>);
+                        <span class="keyword">break</span>;
+                    <span class="keyword">default</span>:
+                        Console.WriteLine(<span class="string">"\n❌ Opción no válida. Intente nuevamente."</span>);
+                        <span class="keyword">break</span>;
+                }
+
+                <span class="keyword">if</span> (continuar)
+                {
+                    Console.WriteLine(<span class="string">"\nPresione cualquier tecla para continuar..."</span>);
+                    Console.ReadKey();
+                }
+            }
+        }
+
+        <span class="comment">// Generado con ayuda de Copilot: Diseño del menú</span>
+        <span class="keyword">static void</span> <span class="method">MostrarMenu</span>()
+        {
+            Console.Clear();
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine(<span class="string">"╔═══════════════════════════════════════════╗"</span>);
+            Console.WriteLine(<span class="string">"║     📚 CATÁLOGO DE CURSOS - DEMO        ║"</span>);
+            Console.WriteLine(<span class="string">"╚═══════════════════════════════════════════╝"</span>);
+            Console.ResetColor();
+            Console.WriteLine();
+            Console.WriteLine(<span class="string">"[1] 📋 Listar todos los cursos"</span>);
+            Console.WriteLine(<span class="string">"[2] 🔍 Buscar cursos por nombre"</span>);
+            Console.WriteLine(<span class="string">"[3] 📄 Ver cursos paginados"</span>);
+            Console.WriteLine(<span class="string">"[4] 🚪 Salir"</span>);
+            Console.WriteLine();
+            Console.Write(<span class="string">"Seleccione una opción: "</span>);
+        }
+
+        <span class="comment">// Función para listar todos los cursos</span>
+        <span class="keyword">static void</span> <span class="method">ListarTodosCursos</span>()
+        {
+            Console.WriteLine(<span class="string">"\n📋 === LISTADO COMPLETO DE CURSOS ==="</span>);
+            Console.WriteLine();
+            
+            <span class="keyword">foreach</span> (<span class="keyword">var</span> curso <span class="keyword">in</span> cursos)
+            {
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.Write(<span class="string">"●"</span>);
+                Console.ResetColor();
+                Console.WriteLine(<span class="string">$" {curso}"</span>);
+            }
+            
+            Console.WriteLine();
+            Console.WriteLine(<span class="string">$"Total de cursos: {cursos.Count}"</span>);
+        }
+
+        <span class="comment">// Generado con ayuda de Copilot: Lógica de búsqueda con LINQ</span>
+        <span class="keyword">static void</span> <span class="method">BuscarCursos</span>()
+        {
+            Console.WriteLine(<span class="string">"\n🔍 === BÚSQUEDA DE CURSOS ==="</span>);
+            Console.Write(<span class="string">"Ingrese el término de búsqueda: "</span>);
+            <span class="keyword">string</span> termino = Console.ReadLine() ?? <span class="string">""</span>;
+
+            <span class="comment">// Filtro case-insensitive usando LINQ</span>
+            <span class="keyword">var</span> resultados = cursos
+                .Where(c =&gt; c.Nombre.Contains(termino, StringComparison.OrdinalIgnoreCase))
+                .ToList();
+
+            <span class="keyword">if</span> (resultados.Count &gt; <span class="number">0</span>)
+            {
+                Console.WriteLine(<span class="string">$"\n✅ Se encontraron {resultados.Count} resultado(s):\n"</span>);
+                <span class="keyword">foreach</span> (<span class="keyword">var</span> curso <span class="keyword">in</span> resultados)
+                {
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    Console.Write(<span class="string">"🔹"</span>);
+                    Console.ResetColor();
+                    Console.WriteLine(<span class="string">$" {curso}"</span>);
+                }
+            }
+            <span class="keyword">else</span>
+            {
+                Console.WriteLine(<span class="string">"\n❌ No se encontraron cursos que coincidan con la búsqueda."</span>);
+            }
+        }
+
+        <span class="comment">// Generado con ayuda de Copilot: Implementación de paginación simple</span>
+        <span class="keyword">static void</span> <span class="method">PaginarCursos</span>()
+        {
+            <span class="keyword">int</span> elementosPorPagina = <span class="number">3</span>;
+            <span class="keyword">int</span> totalPaginas = (<span class="keyword">int</span>)Math.Ceiling((<span class="keyword">double</span>)cursos.Count / elementosPorPagina);
+            <span class="keyword">int</span> paginaActual = <span class="number">1</span>;
+            <span class="keyword">bool</span> navegando = <span class="keyword">true</span>;
+
+            <span class="keyword">while</span> (navegando)
+            {
+                Console.Clear();
+                Console.WriteLine(<span class="string">"📄 === CURSOS PAGINADOS ==="</span>);
+                Console.WriteLine(<span class="string">$"Página {paginaActual} de {totalPaginas}\n"</span>);
+
+                <span class="comment">// Calcular los elementos de la página actual</span>
+                <span class="keyword">var</span> cursosEnPagina = cursos
+                    .Skip((paginaActual - <span class="number">1</span>) * elementosPorPagina)
+                    .Take(elementosPorPagina)
+                    .ToList();
+
+                <span class="keyword">foreach</span> (<span class="keyword">var</span> curso <span class="keyword">in</span> cursosEnPagina)
+                {
+                    Console.ForegroundColor = ConsoleColor.Magenta;
+                    Console.Write(<span class="string">"▸"</span>);
+                    Console.ResetColor();
+                    Console.WriteLine(<span class="string">$" {curso}"</span>);
+                }
+
+                Console.WriteLine();
+                Console.WriteLine(<span class="string">"[A] Anterior | [S] Siguiente | [Q] Volver al menú"</span>);
+                Console.Write(<span class="string">"Opción: "</span>);
+
+                <span class="keyword">string</span> opcion = Console.ReadLine()?.ToUpper() ?? <span class="string">""</span>;
+
+                <span class="keyword">switch</span> (opcion)
+                {
+                    <span class="keyword">case</span> <span class="string">"A"</span>:
+                        <span class="keyword">if</span> (paginaActual &gt; <span class="number">1</span>)
+                            paginaActual--;
+                        <span class="keyword">else</span>
+                            Console.WriteLine(<span class="string">"⚠️ Ya estás en la primera página."</span>);
+                        <span class="keyword">break</span>;
+                    <span class="keyword">case</span> <span class="string">"S"</span>:
+                        <span class="keyword">if</span> (paginaActual &lt; totalPaginas)
+                            paginaActual++;
+                        <span class="keyword">else</span>
+                            Console.WriteLine(<span class="string">"⚠️ Ya estás en la última página."</span>);
+                        <span class="keyword">break</span>;
+                    <span class="keyword">case</span> <span class="string">"Q"</span>:
+                        navegando = <span class="keyword">false</span>;
+                        <span class="keyword">break</span>;
+                }
+
+                <span class="keyword">if</span> (navegando &amp;&amp; opcion != <span class="string">"A"</span> &amp;&amp; opcion != <span class="string">"S"</span> &amp;&amp; opcion != <span class="string">"Q"</span>)
+                {
+                    Console.WriteLine(<span class="string">"❌ Opción no válida."</span>);
+                    System.Threading.Thread.Sleep(<span class="number">1000</span>);
+                }
+            }
+        }
+    }
+}</pre>
+        </div>
+
+        <div class="note">
+            <strong>⚠️ Nota sobre GitHub Copilot:</strong> Este código documenta en comentarios las secciones donde se utilizó GitHub Copilot para generar código base (estructura de clases, menú, y lógica de filtrado). Asegúrate de entender cada función antes de entregar el proyecto.
+        </div>
+
+        <div class="code-section">
+            <h2>README.md - Documentación del Proyecto</h2>
+            <pre><span class="comment"># Catálogo de Cursos - C# Console Application</span>
+
+<span class="keyword">## Descripción</span>
+Sistema simple de gestión de cursos con las siguientes funcionalidades:
+- ✅ Listado completo de cursos (5 registros estáticos)
+- 🔍 Búsqueda por nombre (case-insensitive)
+- 📄 Paginación (3 cursos por página)
+- 🎯 Menú interactivo en consola
+
+<span class="keyword">## Requisitos</span>
+- .NET SDK 6.0 o superior
+- Visual Studio 2022, VS Code o cualquier editor compatible con C#
+
+<span class="keyword">## Cómo Ejecutar</span>
+1. Crear nuevo proyecto:
+<span class="string">```bash
+dotnet new console -n CatalogoCursos
+cd CatalogoCursos
+
+2. Reemplazar el contenido de <span class="string">Program.cs</span> con el código proporcionado
+
+3. Ejecutar:
+<span class="string">```bash
+dotnet run
+
+<span class="keyword">## Funcionalidades Implementadas</span>
+| Requisito | Estado | Descripción |
+|-----------|--------|-------------|
+| Compilar/Ejecutar | ✅ | La aplicación compila y ejecuta correctamente |
+| Lista de cursos | ✅ | Muestra 5 cursos de ejemplo |
+| Filtro de búsqueda | ✅ | Búsqueda por nombre (texto) |
+| Paginación | ✅ | Navegación por páginas de 3 elementos |
+| README | ✅ | Documentación completa incluida |
+
+<span class="keyword">## Uso de GitHub Copilot</span>
+Se utilizó GitHub Copilot para:
+- Estructura base de la clase <span class="string">Curso</span>
+- Diseño del menú principal
+- Lógica de búsqueda con LINQ
+- Implementación de paginación simple
+
+Todas las sugerencias están documentadas en comentarios del código.
+
+<span class="keyword">## Autor</span>
+[Tu Nombre] - Plataformas de Colaboración Digital
+
+<span class="keyword">## Fecha</span>
+Noviembre 2025</pre>
+        </div>
+
+        <div class="code-section">
+            <h2>🎯 Checklist de Entregables</h2>
+            <ul style="list-style: none; padding-left: 0;">
+                <li>✅ Mini app compila/ejecuta correctamente</li>
+                <li>✅ Muestra lista de 5 cursos estáticos</li>
+                <li>✅ Implementa filtro de búsqueda por texto</li>
+                <li>✅ Implementa paginación simulada</li>
+                <li>✅ README con instrucciones de ejecución</li>
+                <li>✅ Comentarios documentando uso de Copilot</li>
+                <li>✅ Código limpio y comprensible</li>
+            </ul>
+        </div>
+
+        <footer>
+            <p><strong>Plataformas de Colaboración Digital</strong> | Caso Práctico - Coordinación de Tareas</p>
+            <p>Recuerda: Sube este código a GitHub, documenta tus commits y actualiza tu tablero Trello</p>
+        </footer>
+    </div>
+</body>
+</html>
