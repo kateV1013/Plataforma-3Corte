@@ -135,7 +135,7 @@ CatalogoCursos/
 - **Lenguaje:** C# (.NET 6.0+)
 - **Herramientas:** LINQ, Collections, Console API
 - **Control de versiones:** Git / GitHub
-- **Asistencia IA:** GitHub Copilot (documentado en comentarios)
+- **Asistencia IA:** GitHub Copilot (documentado en comentarios y completar pequeñas parte del codigo)
 - **Documentación:** HTML5 + CSS3
 
 ---
